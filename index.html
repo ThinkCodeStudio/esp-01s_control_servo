@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome ESP8266 for Light</title>
+    <script>
+        function local(state) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "/pin?state=" + state, true);
+            xmlhttp.send();
+        }
+    </script>
+    <style>
+        body{
+            background-color:rgb(10, 10, 10);
+        }
+        input{
+            margin: 20px;
+            font-size: 24px;
+            padding: 15px;
+            rotate: 0px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="#" onclick="local('on')">
+            <input type="button" value="CLOSE" style="background-color: rgb(182, 0, 0);border-color: rgb(173, 0, 0);">
+        </a>
+        <a href="#" onclick="local('off')">
+            <input type="button" value="OPEN" style="float: right;background-color: rgb(0, 0, 130);border-color: rgb(0, 0, 133);">
+        </a>
+    </div>
+</body>
+
+</html>
